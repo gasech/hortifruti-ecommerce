@@ -8,15 +8,20 @@ import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
 import Products from './pages/ProductListing';
 import ProductPage from './pages/ProductPage';
+import PageNotFound from './pages/PageNotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
+        {/* Main Pages */}
         <Route path="/" element={<Home />}/>
         <Route path="products" element={<Products />} />
         <Route path="products/:productName" element={<ProductPage />}/>
+        
+        {/* 404 - Not Found*/}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

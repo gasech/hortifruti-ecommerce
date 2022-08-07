@@ -1,12 +1,20 @@
-import { useEffect, useState } from "react";
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Button from "components/Button";
+
+import './style.css';
 
 function Home() {
   return (
-    <>
-      <h1>Home</h1>
-      <Link to="/products">Go to products</Link>
-    </>
+    <div className="fruits-banner-wrapper">
+      <div className="fruits-banner">
+        <Link to="/products">
+          <Button>View all fruits</Button>
+        </Link>
+        <Link to="/about">
+          <Button>About</Button>
+        </Link>
+      </div>
+    </div>
   );
 }
 

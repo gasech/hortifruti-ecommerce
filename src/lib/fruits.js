@@ -445,3 +445,15 @@ export const getAllFruits = async () => {
 
   return fruits;  
 }
+
+export const getFruitByName = async (name) => {
+  const fruits = await getAllFruits();
+
+  const foundFruit = fruits.find(fruit => {
+    return fruit.name.toLowerCase() === name
+  })
+
+  console.log(foundFruit);
+
+  return foundFruit;
+}

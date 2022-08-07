@@ -1,0 +1,21 @@
+.fruits-banner-wrapper {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 200px;
+}
+
+.fruits-banner {
+  display: flex;
+  border-radius: 30px;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-image: url("images/fruit-background2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

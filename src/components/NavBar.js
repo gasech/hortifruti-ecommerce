@@ -7,6 +7,8 @@ import Link from "components/Link"
 
 const NavBar = () => {
   const { cart } = useContext(CartContext);
+  
+  const cartLength = Object.keys(cart).length;
 
   return (
     <Nav>
@@ -17,7 +19,7 @@ const NavBar = () => {
       </Link>
       <Link to="/cart">
         <h1>
-          On cart: {cart.length}
+          On cart: {cartLength}
         </h1>
       </Link>
     </Nav>

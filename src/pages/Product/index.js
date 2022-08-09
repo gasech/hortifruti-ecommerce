@@ -14,10 +14,13 @@ import NotFound from "pages/NotFound";
 // Components
 import Button from "components/Button";
 import Container from "components/Container";
-import { TextField } from "@mui/material";
+import { CartContext } from "context/Context";
 
-function ProductPage() {
+function Product() {
+  const {cart, setCart} = useContext(CartContext)
   const [fruit, setFruit] = useState(null);
+  const [quantity, setQuantity] = useState(0);
+
   const { productName } = useParams();
 
   useEffect(() => {
@@ -30,7 +33,18 @@ function ProductPage() {
     fetchData()
       .catch(console.error)
   }, [])
+
+  const addToCart = (fruit, quantity) => {
+
+    setCart({...cart, [fruit] : ( cart[fruit] ? +cart[fruit] + +quantity : quantity) })
+  }
+
+  const onChangeQuantity = (e) => {
+    setQuantity(e.target.value)
+  }
+
   if (!fruit) return <NotFound />
+  
   return (
     <Container>
       <div className="product-info">
@@ -57,8 +71,9 @@ function ProductPage() {
             type="number" 
             min="0" 
             max="99"
+            onChange={onChangeQuantity}
           />
-          <Button>
+          <Button onClick={() => addToCart(fruit.name, quantity)}>
             Add to Cart
           </Button>
         </div>
@@ -67,4 +82,4 @@ function ProductPage() {
   );
 }
 
-export default ProductPage;
+export default Product;

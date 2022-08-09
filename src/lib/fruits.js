@@ -1,5 +1,7 @@
+const CORSPROXY = "https://corsproxy.io/?"
+
 export const getAllFruits = async () => {
-  let fruitsRequest = await fetch('https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api/fruit/all', {
+  let fruitsRequest = await fetch(`${CORSPROXY}https://www.fruityvice.com/api/fruit/all`, {
     method: 'GET',
   })
   
@@ -9,7 +11,7 @@ export const getAllFruits = async () => {
 }
 
 export const getFruitByName = async (name) => {
-  let fruitRequest = await fetch(`https://cors-anywhere.herokuapp.com/https://www.fruityvice.com/api/fruit/${name}`, {
+  let fruitRequest = await fetch(`${CORSPROXY}https://www.fruityvice.com/api/fruit/${name}`, {
     method: 'GET',
   })
   

@@ -12,16 +12,16 @@ function Cart() {
   const { cart, setCart } = useContext(CartContext);
 
   const buyItems = () => {
-    setCart([])
+    setCart({})
   }
 
   return (
     <Container>
       <h1>Cart Page</h1>
       {
-        cart.map((cart) => {
+        Object.keys(cart).map((key) => {
           return (
-            <p key={cart} style={{fontSize: 20}}>{cart}</p>
+            <p key={key} style={{fontSize: 20}}>{key} {cart[key]}</p>
           )
         })
       }

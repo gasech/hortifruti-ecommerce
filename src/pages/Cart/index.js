@@ -22,8 +22,8 @@ function Cart() {
     <Container>
       <h1>Cart - {cartLength} items</h1>
       <div className="cart-row">
-        <p>Name</p>
-        <p>Quantity - Price</p>
+        <p><b>Fruit</b></p>
+        <p><b>Quantity - Price</b></p>
       </div>
       {
         Object.keys(cart).map((key) => {

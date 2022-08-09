@@ -7,9 +7,12 @@ import { CartContext } from "context/Context";
 import Button from "components/Button";
 import Container from "components/Container";
 
+import './style.css';
 
 function Cart() {
   const { cart, setCart } = useContext(CartContext);
+
+  const cartLength = Object.keys(cart).length;
 
   const buyItems = () => {
     setCart({})
@@ -17,11 +20,22 @@ function Cart() {
 
   return (
     <Container>
-      <h1>Cart Page</h1>
+      <h1>Cart - {cartLength} items</h1>
+      <div className="cart-row">
+        <p>Name</p>
+        <p>Quantity - Price</p>
+      </div>
       {
         Object.keys(cart).map((key) => {
+          let name = key;
+          let quantity = cart[key];
+          let price = cart[key] * 5;
+
           return (
-            <p key={key} style={{fontSize: 20}}>{key} {cart[key]}</p>
+            <div key={name} className="cart-row">
+              <p>{name}</p>
+              <p>{quantity} - ${price}.00</p>
+            </div>
           )
         })
       }

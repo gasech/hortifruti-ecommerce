@@ -36,7 +36,7 @@ function Products() {
                   <h2>{fruit.name}</h2>
                   <img src={`/imagefruits/${fruit.name.toLowerCase()}.png`} />
                 </div>
-                <h1>$5.90</h1>
+                <h1>$5.00</h1>
               </div>
             </Link>
           )

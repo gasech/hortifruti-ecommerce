@@ -1,0 +1,8 @@
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-row p {
+  font-size: 22px;
+}

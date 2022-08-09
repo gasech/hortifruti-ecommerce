@@ -1,36 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
+import App from "App";
+import Context from "context/Context"
+
 import './index.css';
-
-// Page imports
-import Home from './pages/Home';
-import Products from './pages/ProductListing';
-import ProductPage from './pages/ProductPage';
-import PageNotFound from './pages/PageNotFound';
-
-// Components
-
-import NavBar from 'components/NavBar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <NavBar/>
-      <Routes>
-        {/* Main Pages */}
-        <Route path="/" element={<Home />}/>
-        <Route path="products" element={<Products />} />
-        <Route path="products/:productName" element={<ProductPage />}/>
-        
-        {/* 404 - Not Found*/}
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <Context>
+      <App />
+    </Context>
   </React.StrictMode>
 );
 

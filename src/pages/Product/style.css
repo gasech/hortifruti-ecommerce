@@ -1,0 +1,41 @@
+.product-info {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 785px) {
+  .product-nutrition {
+    order: 2;
+  }
+}
+
+.product-general h2 {
+  text-align: center;
+}
+
+.product-general img {
+  height: 290px;
+  width: 300px;
+  border-radius: 100px;
+  border: 1px solid greenyellow;
+}
+
+.product-nutrition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-form input {
+  margin-bottom: 10px;
+  height: 50px;
+  width: 90px;
+}

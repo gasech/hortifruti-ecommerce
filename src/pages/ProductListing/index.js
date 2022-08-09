@@ -32,7 +32,11 @@ function Products() {
           return (
             <Link to={`/products/` + fruit.name.toLowerCase()} key={fruit.name}>
               <div className="products-item">
-                <h1>{fruit.name}</h1>
+                <div className="products-item-main">
+                  <h2>{fruit.name}</h2>
+                  <img src={`/imagefruits/${fruit.name.toLowerCase()}.png`} />
+                </div>
+                <h1>$5.90</h1>
               </div>
             </Link>
           )

@@ -7,12 +7,10 @@ function Home() {
   return (
     <div className="fruits-banner-wrapper">
       <div className="fruits-banner">
+        <h1>Find your favorite fruits</h1>
         <Link to="/products">
-          <Button>View all fruits</Button>
-        </Link>
-        <Link to="/about">
-          <Button>About</Button>
-        </Link>
+          <Button>Get Started</Button>
+        </Link> 
       </div>
     </div>
   );

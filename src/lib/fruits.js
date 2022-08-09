@@ -452,8 +452,6 @@ export const getFruitByName = async (name) => {
   const foundFruit = fruits.find(fruit => {
     return fruit.name.toLowerCase() === name
   })
-
-  console.log(foundFruit);
-
+  
   return foundFruit;
 }
